@@ -35,12 +35,12 @@ const Home = () => {
             {/* bonus section 2 */}
 
             <div className="hear container">
-                <div className="hearTitle w-50">
+                <div className="hearTitle">
                     <h2>WE LOVE TO HEAR FROM YOU </h2>
                     <h3>Share your opinion about us. How was your trip with our packages? </h3>
                 </div>
 
-                <div className="hearDetails w-50">
+                <div className="hearDetails">
                     <p>Really good travel writing inspires us to get up, go out and see the world. It can be just as persuasive as an awe-inspiring photograph or an enthusiastic word-of-mouth endorsement from a close friend.</p>
 
                     <p>For most trips, airfare is the most expensive part of the trip. While prices for transatlantic flights have gone down in recent years, they can still put a sizeable dent in any travel budget. Whether you’re a budget solo traveler or a family looking to vacation abroad, finding a cheap flight deal can be what makes or breaks your trip.

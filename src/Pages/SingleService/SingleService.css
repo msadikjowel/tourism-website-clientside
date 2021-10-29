@@ -1,0 +1,81 @@
+.bookingConfirm{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bookingService{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+    width: 50%;
+    margin-top: 5rem;
+}
+
+.bookingService h2{
+    font-weight: bolder;
+    font-size: 60px;
+    margin-bottom: 3rem;
+}
+
+.bookingService img{
+    margin-bottom: 3rem;
+}
+
+.bookingInformation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin-top: 5rem;
+    /* border: 1px solid green; */
+}
+
+.bookingInformation h2{
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.bookingInformation input{
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #eee;
+    margin-bottom: .5rem;
+    padding: .5rem 1rem;
+    width: auto;
+}
+
+.bookingInformation #confirmBtn{
+    border: none;
+    margin-right: 20px;
+    padding: 5px 10px;
+    background-color: #053185;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+/* media queries */
+@media (max-width: 991px){
+    .bookingConfirm{
+        display: block;
+        margin: auto;
+        align-items: center;
+    }
+
+    .bookingService{
+        width: auto;
+    }
+
+    .bookingInformation{
+        width: auto;
+    }
+
+    .bookingService img{
+        width: auto;
+    }
+}

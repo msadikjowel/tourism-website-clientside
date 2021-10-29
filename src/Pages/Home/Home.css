@@ -97,10 +97,11 @@
 
 .hearTitle{
     margin-right: 50px;
+    width: 50%;
 }
 
 .hearTitle h2{
-    font-size: 70px;
+    font-size: 60px;
     font-weight: bold;
     margin-bottom: 40px;
 }
@@ -109,6 +110,10 @@
 .hearTitle h3{
     font-weight: 500;
     font-size: 30px;
+}
+
+.hearDetails{
+    width: 50%;
 }
 
 .hearDetails p{
@@ -141,5 +146,24 @@
         font-weight: 200;
         font-size: 18px;
         margin-bottom: 40px;
+    }
+
+
+    .hear{
+    
+        display: block;
+        width: 100%;
+    }
+
+    .hearTitle{
+        width: 100%;
+    }
+
+    .hearDetails{
+        width: 100%;
+    }
+
+    .hearTitle h3{
+        margin-bottom: 50px;
     }
 }
