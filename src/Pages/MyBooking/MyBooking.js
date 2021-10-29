@@ -16,7 +16,7 @@ const MyBooking = () => {
     const [myBookings, setMyBookings] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myBooking/${email}`)
+        fetch(`https://sheltered-forest-11822.herokuapp.com/myBooking/${email}`)
             .then(res => res.json())
             .then(data => setMyBookings(data))
     }, []);
@@ -26,7 +26,7 @@ const MyBooking = () => {
     const handleDeleteBooking = id => {
         const proceedDelete = window.confirm('Are you sure to delete your booking?')
         if (proceedDelete) {
-            fetch(`http://localhost:5000/confirmBooking/${id}`, {
+            fetch(`https://sheltered-forest-11822.herokuapp.com/confirmBooking/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

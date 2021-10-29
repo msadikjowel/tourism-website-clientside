@@ -14,7 +14,7 @@ const SingleService = () => {
     const [service, setService] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleService/${id}`)
+        fetch(`https://sheltered-forest-11822.herokuapp.com/singleService/${id}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, [])
@@ -27,7 +27,7 @@ const SingleService = () => {
         data.price = service?.price;
         data.status = 'pending';
 
-        fetch(`http://localhost:5000/confirmBooking`, {
+        fetch(`https://sheltered-forest-11822.herokuapp.com/confirmBooking`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data),

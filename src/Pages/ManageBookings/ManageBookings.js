@@ -14,7 +14,7 @@ const ManageBookings = () => {
     const [allBookings, setAllBookings] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allBookings`)
+        fetch(`https://sheltered-forest-11822.herokuapp.com/allBookings`)
             .then(res => res.json())
             .then(data => setAllBookings(data))
     }, [allBookings]);
@@ -24,7 +24,7 @@ const ManageBookings = () => {
     const handleDeleteBooking = id => {
         const proceedDelete = window.confirm('Are you sure to delete your booking?')
         if (proceedDelete) {
-            fetch(`http://localhost:5000/confirmBooking/${id}`, {
+            fetch(`https://sheltered-forest-11822.herokuapp.com/confirmBooking/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -41,7 +41,7 @@ const ManageBookings = () => {
 
     // update
     const handleUpdateBooking = id => {
-        fetch(`http://localhost:5000/updateBooking/${id}`, {
+        fetch(`https://sheltered-forest-11822.herokuapp.com/updateBooking/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(allBookings)

@@ -10,7 +10,7 @@ const AddService = () => {
 
 
 
-        fetch(`http://localhost:5000/addService`, {
+        fetch(`https://sheltered-forest-11822.herokuapp.com/addService`, {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data),
