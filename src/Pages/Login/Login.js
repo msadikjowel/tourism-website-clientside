@@ -19,6 +19,10 @@ const Login = () => {
                 history.push(redirect_uri);
             })
     }
+
+    const handleLogin = () => {
+        alert('This function still on beta testing. Try Google sign in please.')
+    }
     return (
         <div>
             <div className="login">
@@ -36,7 +40,7 @@ const Login = () => {
                             <Form.Control type="pass" placeholder="Enter password" />
                         </Form>
 
-                        <button id="loginButton">Login</button>
+                        <button id="loginButton" onClick={handleLogin}>Login</button>
                         <h3>or</h3>
                         <button onClick={handleGoogleLogin}>Login with Google</button>
                     </div>

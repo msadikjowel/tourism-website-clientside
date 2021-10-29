@@ -6,7 +6,7 @@ import useAuth from '../../hooks/useAuth';
 import './MyBooking.css'
 
 // font awesome icon
-const update = <FontAwesomeIcon icon={faCheck} />
+// const update = <FontAwesomeIcon icon={faCheck} />
 const del = <FontAwesomeIcon icon={faTrashAlt} />
 
 const MyBooking = () => {
@@ -24,17 +24,20 @@ const MyBooking = () => {
 
     // delete a booking
     const handleDeleteBooking = id => {
-        fetch(`http://localhost:5000/confirmBooking/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    alert('Successfully Deleted!');
-                    const rest = myBookings.filter(booking => booking._id !== id);
-                    setMyBookings(rest);
-                }
+        const proceedDelete = window.confirm('Are you sure to delete your booking?')
+        if (proceedDelete) {
+            fetch(`http://localhost:5000/confirmBooking/${id}`, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('Successfully Deleted!');
+                        const rest = myBookings.filter(booking => booking._id !== id);
+                        setMyBookings(rest);
+                    }
+                })
+        }
     }
 
 
@@ -60,7 +63,7 @@ const MyBooking = () => {
                     {
                         myBookings.map((booking, index) =>
                             <tr key={booking?._id}>
-                                <td>{index}</td>
+                                <td>{index + 1}</td>
                                 <td>{booking?.serviceName}</td>
                                 <td>${booking?.price}</td>
                                 <td>{booking?.fullName}</td>
@@ -68,7 +71,7 @@ const MyBooking = () => {
                                 <td>{booking?.phone}</td>
                                 <td>{booking?.address}</td>
                                 <td>{booking?.status}</td>
-                                <td><button title="Approve">{update}</button> <button title="Delete" onClick={() => handleDeleteBooking(booking?._id)}>{del}</button></td>
+                                <td><button title="Delete" onClick={() => handleDeleteBooking(booking?._id)}>{del}</button></td>
                             </tr>
                         )
                     }
