@@ -1,0 +1,56 @@
+.header{
+    background-color: #eee;
+}
+
+
+#headerTitle{
+    font-weight: bolder;
+    font-size: large;
+    text-decoration: none;
+    color: #053185;
+    font-size: 1.5rem;
+}
+
+.headerLink{
+    text-decoration: none;
+    color: #053185;
+    font-weight: 500;
+    margin-right: 40px;
+}
+
+.headerLink:hover{
+    color: #053185;
+    text-decoration: underline;
+}
+
+.headerLinkSelected{
+    font-weight: bold;
+}
+
+.profileImg{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-right: 10px;
+    /* margin-bottom: 10px; */
+}
+
+.headerBtn{
+    border: none;
+    margin-right: 20px;
+    padding: 5px 10px;
+    background-color: #053185;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+/* media queries */
+@media (max-width: 991px){
+    .headerMy{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
