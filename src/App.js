@@ -10,6 +10,7 @@ import SingleService from './Pages/SingleService/SingleService';
 import Login from './Pages/Login/Login';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -48,7 +49,9 @@ function App() {
                 <Login></Login>
               </Route>
 
-
+              <Route path='*'>
+                <NotFound></NotFound>
+              </Route>
 
             </Switch>
           </div>
