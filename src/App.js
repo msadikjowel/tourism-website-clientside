@@ -11,6 +11,8 @@ import Login from './Pages/Login/Login';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import NotFound from './Pages/NotFound/NotFound';
+import UserProfile from './Pages/UserProfile/UserProfile';
+import Services from './Pages/Home/Services/Services';
 
 function App() {
   return (
@@ -45,9 +47,19 @@ function App() {
                 <SingleService></SingleService>
               </PrivateRoute>
 
+              <PrivateRoute exact path='/packages'>
+                <Services></Services>
+              </PrivateRoute>
+
+              <PrivateRoute exact path='/profile'>
+                <UserProfile></UserProfile>
+              </PrivateRoute>
+
               <Route exact path='/login'>
                 <Login></Login>
               </Route>
+
+
 
               <Route path='*'>
                 <NotFound></NotFound>

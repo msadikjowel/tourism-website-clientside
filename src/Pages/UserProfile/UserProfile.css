@@ -1,0 +1,13 @@
+.userProfile{
+    text-align: center;
+    margin: 10rem;
+}
+
+.userProfile img{
+    border-radius: 50%;
+}
+
+.userProfile h2 span{
+    color: navy;
+    font-weight: bolder;
+}

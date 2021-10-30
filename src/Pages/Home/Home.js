@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css'
 import Services from './Services/Services';
 
@@ -28,7 +29,7 @@ const Home = () => {
                 <h3>EXCLUSIVE OFFER</h3>
                 <h2>GET 30% OFF YOUR FIRST TRIP</h2>
                 <p>We are giving 30% discount for your first trip with us. You can grave this offer and enjoy the trip.</p>
-                <button>View Packages</button>
+                <Link to='/packages'><button>View Packages</button></Link>
             </div>
 
 
