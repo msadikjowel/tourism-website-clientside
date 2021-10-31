@@ -8,7 +8,7 @@ const AddService = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
 
-
+        // console.log(data)
 
         fetch(`https://sheltered-forest-11822.herokuapp.com/addService`, {
             method: 'POST',

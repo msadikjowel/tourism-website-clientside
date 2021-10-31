@@ -13,10 +13,12 @@ const Services = () => {
             .then(data => setServices(data))
     }, []);
 
+    // spinner
     const { isLoading } = useAuth();
     if (isLoading) {
         return <div className="services-contents mt-5"><Spinner animation="grow" variant="primary" /></div>
     }
+
     return (
         <div className="my-5 container services-contents">
             <h2 id="services-title">TRAVEL <span>PACKAGES</span></h2>
