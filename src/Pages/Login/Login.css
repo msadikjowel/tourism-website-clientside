@@ -48,6 +48,8 @@
 .login-form input{
     outline: none;
     border: none;
+    width: 100%;
+    /* border: 1px solid red; */
     background-color: #eee;
     border-radius: 20px;
     padding: .7rem 1rem;
@@ -57,7 +59,7 @@
 
 .login-form button{
     border: none;
-    margin-right: 20px;
+    margin-bottom: 20px;
     padding: 10px 20px;
     background-color: #053185;
     color: #fff;
@@ -76,6 +78,12 @@
 
 
 /* media Queries */
+@media (max-width: 1400px){
+    .login-contents{
+        width: 75%;
+    }
+}
+
 @media (max-width: 991px){
     .login-div{
         display: block;
@@ -83,6 +91,10 @@
 }
 
 @media(max-width: 768px){
+
+    .login-div{
+        padding: 1rem;
+    }
     .login-img img{
         width: 7rem;
         height: 7rem;
@@ -99,11 +111,12 @@
 
     .login-form button{
         border: none;
-        margin-right: 20px;
+        /* margin-right: 20px; */
         padding: 5px 10px;
         background-color: #053185;
         color: #fff;
         border-radius: 5px;
     }
+
     
 }

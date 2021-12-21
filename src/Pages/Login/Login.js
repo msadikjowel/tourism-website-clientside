@@ -40,8 +40,8 @@ const Login = () => {
                             <Form.Control type="pass" placeholder="Enter password" />
                         </Form>
 
-                        <button id="loginButton" onClick={handleLogin}>Login</button>
-                        <h3>or</h3>
+                        <button id="loginButton" onClick={handleLogin}>Login</button> <br />
+                        {/* <h3>or</h3> */}
                         <button onClick={handleGoogleLogin}>Login with Google</button>
                     </div>
                 </div>

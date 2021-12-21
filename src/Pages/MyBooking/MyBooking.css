@@ -16,5 +16,10 @@
 
 #table-contents{
     text-align: center;
+}
 
+.bookingSpin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

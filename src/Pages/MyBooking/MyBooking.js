@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { Table } from 'react-bootstrap';
+import { Spinner, Table } from 'react-bootstrap';
 import useAuth from '../../hooks/useAuth';
 import './MyBooking.css'
 
@@ -14,11 +14,15 @@ const MyBooking = () => {
     const email = user?.email;
 
     const [myBookings, setMyBookings] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         fetch(`https://sheltered-forest-11822.herokuapp.com/myBooking/${email}`)
             .then(res => res.json())
-            .then(data => setMyBookings(data))
+            .then(data => {
+                setMyBookings(data);
+                setLoading(true);
+            })
     }, []);
 
 
@@ -44,40 +48,46 @@ const MyBooking = () => {
     return (
         <div className="container booking-container">
             <h2 className="myBooking">My Booking</h2>
+            {loading ?
+                <Table responsive striped bordered hover id="table-contents">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Service Name</th>
+                            <th>Price</th>
+                            <th>Customer Name</th>
+                            <th>Customer Email</th>
+                            <th>Customer Phone</th>
+                            <th>Address</th>
+                            <th>Status</th>
+                            <th>Activity</th>
+                        </tr>
+                    </thead>
 
-            <Table responsive striped bordered hover id="table-contents">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Service Name</th>
-                        <th>Price</th>
-                        <th>Customer Name</th>
-                        <th>Customer Email</th>
-                        <th>Customer Phone</th>
-                        <th>Address</th>
-                        <th>Status</th>
-                        <th>Activity</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        myBookings.map((booking, index) =>
-                            <tr key={booking?._id}>
-                                <td>{index + 1}</td>
-                                <td>{booking?.serviceName}</td>
-                                <td>${booking?.price}</td>
-                                <td>{booking?.fullName}</td>
-                                <td>{booking?.email}</td>
-                                <td>{booking?.phone}</td>
-                                <td>{booking?.address}</td>
-                                <td>{booking?.status}</td>
-                                <td><button title="Delete" onClick={() => handleDeleteBooking(booking?._id)}>{del}</button></td>
-                            </tr>
-                        )
-                    }
+                    <tbody>
+                        {
+                            myBookings.map((booking, index) =>
+                                <tr key={booking?._id}>
+                                    <td>{index + 1}</td>
+                                    <td>{booking?.serviceName}</td>
+                                    <td>${booking?.price}</td>
+                                    <td>{booking?.fullName}</td>
+                                    <td>{booking?.email}</td>
+                                    <td>{booking?.phone}</td>
+                                    <td>{booking?.address}</td>
+                                    <td>{booking?.status}</td>
+                                    <td><button title="Delete" onClick={() => handleDeleteBooking(booking?._id)}>{del}</button></td>
+                                </tr>
+                            )
+                        }
 
-                </tbody>
-            </Table>
+                    </tbody>
+
+                </Table>
+                : <div className='bookingSpin'>
+                    <Spinner animation="border" variant="primary" />
+                </div>
+            }
 
         </div>
     );

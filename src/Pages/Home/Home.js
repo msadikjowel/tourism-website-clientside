@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css'
+import OurServices from './OurServices/OurServices';
 import Services from './Services/Services';
 
 const Home = () => {
@@ -24,7 +25,7 @@ const Home = () => {
 
 
             {/* bonus section 1 */}
-            <div className="offer">
+            <div className="offer" id='offer'>
 
                 <h3>EXCLUSIVE OFFER</h3>
                 <h2>GET 30% OFF YOUR FIRST TRIP</h2>
@@ -50,10 +51,11 @@ const Home = () => {
                 </div>
             </div>
 
+            <OurServices></OurServices>
 
 
             {/* bonus section 3 */}
-            <div className="subscribe-container">
+            <div className="subscribe-container" id='subscribe'>
                 <h2>Subscribe to Ace Holidays Pass</h2>
                 <h3>Features</h3>
 

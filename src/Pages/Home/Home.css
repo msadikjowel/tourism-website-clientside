@@ -121,6 +121,7 @@
 .hearDetails p{
     letter-spacing: 1px;
     line-height: 2;
+    text-align: justify;
 }
 
 
@@ -168,13 +169,86 @@
         margin: 1rem 10rem;
         color: #666;
     }
+
+    .hear{
+        margin: 5rem 5rem;
+    }
+
+    .hearTitle{
+        margin-right: 30px
+    }
+
+    .hearTitle h2{
+        font-size: 50px;
+
+    }
+
+    .hearTitle h3{
+        font-size: 25px;
+    }
+
+    .hearDetails p{
+        letter-spacing: 1px;
+        line-height:normal;
+    }
 }
 
+
+@media (max-width:1200px){
+    .hear{
+        margin: 5rem 5rem;
+    }
+    .hearTitle{
+        margin-right: 20px
+    }
+
+    .hearTitle h2{
+        font-size: 40px;
+
+    }
+
+    .hearTitle h3{
+        font-size: 20px;
+    }
+}
 
 
 @media(max-width: 991px){
     .hear{
         margin: 10rem 1rem;
+    }
+
+    .hear{
+    
+        display: block;
+        width: 100%;
+        margin: 10rem 0;
+        padding: 1rem;
+
+    }
+
+    .hearTitle{
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .hearDetails{
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .hearTitle h3{
+        margin-bottom: 50px;
+    }
+
+
+    .hearTitle h2{
+        font-size: 40px;
+    }
+    
+    
+    .hearTitle h3{
+        font-size: 20px;
     }
 
     .features-container{
@@ -222,40 +296,6 @@
         font-size: 18px;
         margin-bottom: 40px;
     }
-
-
-    .hear{
-    
-        display: block;
-        width: 100%;
-        margin: 10rem 0;
-        padding: 1rem;
-
-    }
-
-    .hearTitle{
-        width: 100%;
-    }
-
-    .hearDetails{
-        width: 100%;
-    }
-
-    .hearTitle h3{
-        margin-bottom: 50px;
-    }
-
-
-    .hearTitle h2{
-        font-size: 40px;
-       
-    }
-    
-    
-    .hearTitle h3{
-        font-size: 20px;
-    }
-
 
     .features-container{
         display: block;

@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Header.css'
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Header = () => {
     const { user, logOut } = useAuth();
@@ -23,6 +24,7 @@ const Header = () => {
                                 <div className="my-auto headerMy">
 
                                     <NavLink className="headerLink" activeClassName="headerLinkSelected" to='/home'>Home</NavLink>
+                                    <Link smooth className="headerLink" activeClassName="headerLinkSelected" to='/home#services-title'>Packages</Link>
                                     <NavLink className="headerLink" activeClassName="headerLinkSelected" to='/myBooking'>My Booking</NavLink>
                                     <NavLink className="headerLink" activeClassName="headerLinkSelected" to='/manageBooking'>Manage Bookings</NavLink>
                                     <NavLink className="headerLink" activeClassName="headerLinkSelected" to='/addService'>Add a Service</NavLink>
@@ -37,10 +39,18 @@ const Header = () => {
 
 
                                 </div>
-                            </div> :
+                            </div> : <div>
+                                <NavLink className="headerLink" activeClassName="headerLinkSelected" to='/home'>Home</NavLink>
+                                <Link smooth className="headerLink" activeClassName="headerLinkSelected" to='/home#services-title'>Packages</Link>
+                                <Link smooth className="headerLink" activeClassName="headerLinkSelected" to='/home#offer'>Offer</Link>
+                                <Link smooth className="headerLink" activeClassName="headerLinkSelected" to='/home#services'>Services</Link>
+                                <Link smooth className="headerLink" activeClassName="headerLinkSelected" to='/home#subscribe'>Subscribe</Link>
+
                                 <NavLink to='/login'>
                                     <button className="headerBtn">Login</button>
-                                </NavLink>}
+                                </NavLink>
+                            </div>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
